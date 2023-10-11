@@ -146,6 +146,7 @@ img.zoomImage {
 }
 .blank-space {
     height: 50vh;
+    width: 60vh;
 }
 p {
     text-indent: 2em;
