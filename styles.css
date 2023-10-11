@@ -37,6 +37,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 50%;
+    margin: auto;
 }
 body.index {
     background-image: url('1.jpg');
@@ -146,7 +148,6 @@ img.zoomImage {
 }
 .blank-space {
     height: 50vh;
-    width: 60vh;
 }
 p {
     text-indent: 2em;
