@@ -20,8 +20,7 @@ pre {
         font-size: 16px;
         border: 1px solid #ccc;
         line-height: 1.5;
-        width: 485px;
-        height: 402px;
+        max-width: 50%;
         margin: auto;
         text-align: left;
         color: grey;
