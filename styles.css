@@ -152,3 +152,13 @@ img.zoomImage {
 p {
     text-indent: 2em;
 }
+.shadow-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    .shadow-box p {
+        margin: 0;
+        color: #333;
+}
