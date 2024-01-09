@@ -1,2 +1,2 @@
-# nickc009.github.io
+# nick.github.io
 Nicholas C. Cooks Digital Portfolio
