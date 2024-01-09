@@ -1,164 +1,75 @@
-table {
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 0 auto;
-}
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-decoration: underline;
-}
-pre {
-    background-color: rgba(240, 240, 240, 0.8);
-        padding: 10px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        line-height: 1.5;
-        max-width: 50%;
-        margin: auto;
-        text-align: left;
-        color: grey;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-}
-body {
-    font-size: 18px;
-    background-size: cover;
-    background-attachment: fixed;
-    color: azure;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 50%;
-    margin: auto;
-}
-body.index {
-    background-image: url('1.jpg');
-}
-body.contact {
-    background-image: url('4.jpg');
-}
-body.portfolio {
-    background-image: url('6.jpg');
-}
-body.about {
-    background-image: url('8.jpg');
-}
-h1{
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('1.jpg');
-    background-size: cover;
-}
-footer {
-    font-size: 16px;
-    text-align: center;
-    background-color: rgba(240, 240, 240, 0.1);
-    padding: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: auto;
-    flex: 1;
-}
-header {
-    text-align: center;
-    background-color: rgba(240, 240, 240, 0.1);
-    padding: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: auto;
-    flex: 1;
-}
-.navbar {
-    background-color: rgba(0,0,0,0.2);
-    overflow: hidden;
+/* hero background image */
+.bgimage {
+    height:100vh;
+    background: url('images/MeRoad.jpg');
+    background-size:cover;
+    position:relative;
 }
 
-.dropdown {
-    position: relative;
+/* text css above hero image*/
+.hero_title {
+    font-size: 4.5rem;
+}
+.hero_desc {
+    font-size: 2rem;
+}
+.hero-text {
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
-.dropbtn {
-    background-color: rgba(0,0,0,0.2);
-    color: white;
-    padding: 14px 16px;
-    font-size: 24px;
-    border: none;
+/* services section css */
+.servicesText.card {
+    height: 280px;
     cursor: pointer;
+  }
+.servicesIcon {
+    font-size: 36px;
+    text-align: center;
     width: 100%;
 }
-
-.dropdown-content {
-    display: none;
-    position: relative;
-    background-color: rgba(0,0,0,0.2);
-    min-width: 0px;
-    z-index: 1;
+.card-title {
+    text-align: center;
+}
+.card:hover .servicesIcon {
+    color: #008000;
+}
+.servicesText:hover {
+    border: 1px solid #008000;
 }
 
-.dropdown-content a {
-    color: azure;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
+/* display background color black on navbar scroll */
+.navbarScroll.navbarDark {
+    background-color: black;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
+/* social media icons styling */
+.social-icons {
+    font-size: 36px;
+    cursor: pointer;
+}
+.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+    color: #008000;
+}
+.fab {
+    color: #000000;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-main {
-    margin-top: 60vh;
-    min-height: 80vh;
-}
-ul {
-    list-style-type: none;
-  }
-  div {
-    display: inline;
+/* footer styling */
+#footer {
+    background-color: #808080;
+    text-align: center;
 }
 
-div.imageContainer {
-    display: inline;
-    position: relative;
-    z-index: 10;
+/* spacing on all sections */
+#about, #services, #portfolio, #contact {
+    margin-top: 4rem;
+    padding-top: 4rem;
 }
-
-img.zoomImage {
-    position: relative;
-    z-index: 10;
-}
-.blank-space {
-    height: 50vh;
-}
-p {
-    text-indent: 2em;
-}
-.shadow-box {
-    width: 300px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-    .shadow-box p {
-        margin: 0;
-        color: #333;
+#contact {
+    padding-bottom: 4rem;
 }
