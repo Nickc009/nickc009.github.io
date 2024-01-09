@@ -1,106 +1,107 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Portfolio Website-Nick</title>
+  <title>Portfolio Website-Brad</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- linking css file -->
-  <link rel="stylesheet" href="style.css">
   <!-- bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- load javascript after loading all html content -->
-    <script src="script/script.js"></script>
-</body>
-</html>
-
-<nav class="navbar navbar-expand-lg fixed-top navbarScroll">
-    <div class="container">
-        <a class="navbar-brand" href="#">Brad</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-            
+    <!-- navbar -->
+    <!-- https://getbootstrap.com/docs/5.2/components/navbar/ -->
+    <!-- Add class of bg-light to nav element -->
+    <nav class="navbar navbar-expand-lg fixed-top navbarScroll navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Brad</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                
+            </div>
         </div>
-    </div>
-</nav>
-
- <!-- main banner -->
- <section class="bgimage" id="home">
-    <div class="container-fluid">
+    </nav>
+    
+    <!-- main banner -->
+    <!-- https://getbootstrap.com/docs/5.2/layout/containers/ -->
+    <!-- https://getbootstrap.com/docs/5.2/layout/grid/ -->
+    <section class="container-fluid section bgimage" id="home">
         <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
-            <h2 class="hero_title">Hi, I'm Nick</h2>
-            <p class="hero_desc">I am a up and coming Software Developer based out of Montana</p>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero_text">
+                <h2 class="hero_title">Hi, it's me Brad</h2>
+                <p class="hero_desc">I am a professional freelancer in New York City</p>
+            </div>
         </div>
-        </div>
-    </div>
-</section>
-
-<!-- about section-->
-<section id="about">
-    <div class="container mt-4 pt-4">
+    </section>
+    
+    <!-- about section -->
+    <section class="container mt-4 pt-4 section" id="about">
         <h1 class="text-center">About Me</h1>
+        
         <div class="row mt-4">
-            <div class="col-lg-4">
-                <img src="images/Headshot2023circle.jpeg" class= "imageAboutPage" alt="">
+            <div class="col-lg-6">
+                <img src="images/about.jpeg" class="image_about" alt="">
             </div>
 
-            <div class="col-lg-8">
-                <p> Welcome to my corner of the internet! 
-                    This website is my virtual campfire where I showcase my skills, passions, and the concoction of code and creativity that makes me who I am. Grab a virtual marshmallow, and let's dive into this expedition!
+            <div class="col-lg-6">
+                <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
                     
                 </p>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <ul>
-                            <li>Name: Nick Cook</li>
-                            <li>Age: 33</li>
+                            <li>Windsurfing</li>
+                            <li>Mountain-climbing</li>
+                            <li>Brain-surgery</li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Creative-writing</li>
+                            <li>Gymnastics</li>
+                            <li>Landscape painting</li>
 
                         </ul>
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <p> 
-                        Ah, let me regale you with the tale of the Montana native turned digital nomad! Meet the enigmatic tech-sorcerer known as Nicholas C. Cook, hailing from the vast and wild landscapes of Montana. From the very beginning, curiosity ran through his veins like a river through the Rockies. His journey into the world of tinkering and tech started with a bang, quite literally, as he tore things apart with youthful abandon. At first, it seemed like nothing would ever be whole again, but a remarkable transformation was underway.
-
-                        Gradually, the chaos transformed into mastery. Like a phoenix rising from the ashes, he discovered his knack for repairing the very contraptions he had once dismantled with wild enthusiasm. It was a revelation, a testament to his innate understanding of how things worked in this intricate techno-verse.
-
-                        At the tender age of 21, our adventurer embarked on a quest of a different kind. He ventured westward to the rugged lands of northern California, where the grid was but a distant memory. Off the grid living became his way of life, a digital hermitage amidst the redwoods and rivers. Here, he learned to harness nature's gifts while carving out a unique connection to the world, one devoid of screens and city lights.
-
-                        But, as the saying goes, all paths lead back home. Nick has now returned to the welcoming embrace of Montana, his birthplace and the landscape that has always fueled his adventurous spirit. With a heart still touched by the wilderness and a mind ignited by the endless possibilities of technology, he is on the verge of a grand transformation. The goal? To pivot his career towards the mesmerizing world of computer science, where he'll blend his love for the great outdoors with his passion for coding, creating a unique synergy that promises to reshape the digital wilderness.
+                    <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                     </p>
                 </div>
             </div>
         </div>
-</section>
-
-<!-- services section-->
-<section id="services">
-    <div class="container">
+    </section>
+    
+    <!-- services section-->
+    <!-- https://getbootstrap.com/docs/5.2/components/card/#about -->
+    <section class="container section" id="services">
         <h1 class="text-center">Services</h1>
         <div class="row">
             <div class="col-lg-4 mt-4">
@@ -176,107 +177,106 @@
                 </div>  
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- portfolio section-->
-<section id="portfolio">
-    <div class="container mt-3">
-        <h1 class="text-center">Portfolio</h1>
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <div class="card">
-                    <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">YouTube Clone</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
+    <!-- portfolio section-->
+    <section class="section" id="portfolio">
+        <div class="container mt-3">
+            <h1 class="text-center">Portfolio</h1>
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage1.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">YouTube Clone</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage4.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Quiz App</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage3.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Product Landing Page</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage4.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Messaging Service</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-lg-4 mt-4">
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Quiz App</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage1.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Twitter Clone</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="images/portfolioImage4.jpeg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Blog App</h4>
+                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-success">Link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/portfolioImage3.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Product Landing Page</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Messaging Service</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Twitter Clone</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Blog App</h4>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-success">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<!-- contact section-->
-<section id="contact">
-    <div class="container mt-3 contactContent">
+    </section>
+    
+    <!-- contact section-->
+    <!-- https://getbootstrap.com/docs/5.2/forms/overview -->
+    <section class="container mt-3 section" id="contact">
         <h1 class="text-center">Contact Me</h1>
 
         <div class="row mt-4">
             <div class="col-lg-6">
-                <!-- to edit google map goto https://www.embed-map.com type your location, generate html code and copy the html  -->
+                <!-- to edit google map go to https://www.embed-map.com type your location, generate html code and copy the html  -->
                 <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;">
                     <div id="embedmap-canvas" style="height:100%; width:100%;max-width:100%;">
-                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Montana,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=sydney+NSW&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                         </iframe>
                     </div>
                     <a class="googlemaps-html" href="https://www.embed-map.com" id="get-data-forembedmap">https://www.embed-map.com</a>
@@ -296,16 +296,13 @@
                     </div>
                 </form>
                 <button type="button" class="btn btn-success mt-3">Contact Me</button>
-                
             </div>
-
         </div>
-    </div>
-</section>
-
- <!-- footer section-->
- <footer id="footer">
-    <div class="container-fluid">
+        
+    </section>
+    
+    <!-- footer section-->
+    <footer class="container-fluid footer" id="footer">
         <!-- social media icons -->
         <div class="social-icons mt-4">
             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -314,5 +311,12 @@
             <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.twitch.tv/" target="_blank"><i class="fab fa-twitch"></i></a>
         </div>
-    </div>
-</footer>
+    </footer>
+    
+
+    <!-- load javascript after loading all html content -->
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>
