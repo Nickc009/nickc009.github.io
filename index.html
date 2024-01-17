@@ -251,15 +251,15 @@
 
             <div class="col-lg-6">
                 <!-- form fields -->
-                <form>
+                <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
                     <input type="text" class="form-control form-control-lg" placeholder="Name">
                     <input type="email" class="form-control mt-3" placeholder="Email">
                     <input type="text" class="form-control mt-3" placeholder="Subject">
                     <div class="mb-3 mt-3">
-                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Message"></textarea>
                     </div>
                 </form>
-                <button type="button" class="btn btn-success mt-3">Contact Me</button>
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Contact Me</button>
             </div>
         </div>
         
