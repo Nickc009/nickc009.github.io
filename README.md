@@ -33,19 +33,12 @@ Any static file server works. There is nothing to compile.
 
 ## Contact form
 
-The form currently posts to a Formspree placeholder. Until a real form ID is
-configured, JavaScript falls back to opening a pre-filled email to
-`NickCookCS@gmail.com`, so visitors never hit a dead end.
+The form posts to Formspree at `https://formspree.io/f/xyewprnn`.
+Submissions are delivered to the email configured in the Formspree dashboard.
 
-To connect Formspree:
-
-1. Create a form at <https://formspree.io> using `NickCookCS@gmail.com`.
-2. Copy the form ID from the endpoint (for example `https://formspree.io/f/abcdwxyz`).
-3. In `index.html`, replace `YOUR_FORM_ID` in the form `action`.
-4. Submit a test message and confirm it arrives.
-5. Optionally add your domain to Formspree's allowed domains.
-
-Spam protection uses Formspree's `_gotcha` honeypot field.
+If the endpoint is ever unset (a `YOUR_FORM_ID` placeholder), JavaScript falls
+back to opening a pre-filled email to `NickCookCS@gmail.com`, so the form is
+never a dead end. Spam protection uses Formspree's `_gotcha` honeypot field.
 
 ## Deploy
 
