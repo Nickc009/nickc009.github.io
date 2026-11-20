@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The home lab that runs my digital life — Nick Cook</title>
+  <meta name="description" content="A self-hosted Linux lab for files, photos, music, calendars, and backups — reachable only over a private VPN. A case study in doing the quiet maintenance work.">
+  <link rel="canonical" href="https://nickccook.com/work/homelab.html">
+  <meta name="theme-color" content="#12241a">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nick Cook">
+  <meta property="og:title" content="The home lab that runs my digital life — Nick Cook">
+  <meta property="og:description" content="One Linux host replacing rented cloud services, with no public services exposed, nightly restic backups, and a weekly read-verification.">
+  <meta property="og:url" content="https://nickccook.com/work/homelab.html">
+  <meta property="og:image" content="https://nickccook.com/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="manifest" href="../assets/images/site.webmanifest">
+
+  <script src="../assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header site-header--solid" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">NC</span>
+        <span>Nick Cook</span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#capabilities">Capabilities</a></li>
+          <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project">
+      <header class="project-hero">
+        <div class="container">
+          <a class="back-link" href="../index.html#work">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H4M7.5 3.5 3 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All work
+          </a>
+          <p class="section-kicker">Case study &middot; Home lab</p>
+          <h1>The home lab that runs my digital life</h1>
+          <p class="project-deck">One Linux host, three self-hosted services, and a backup routine that gets checked every week.</p>
+
+          <dl class="project-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Owner &amp; operator</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>2025 &mdash; present</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Linux, Docker, Nextcloud, Seafile, Immich, restic, systemd, Python, Tailscale</dd>
+            </div>
+            <div>
+              <dt>Access</dt>
+              <dd>Tailscale VPN only</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="container project-visual">
+        <svg class="diagram-desktop" viewBox="0 0 640 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the internet connects to a home server over a VPN. The server runs Nextcloud, Seafile, and Immich, with a separate backup disk.">
+          <text x="30" y="38" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="9" letter-spacing="2.2">PRIVATE NETWORK</text>
+          <rect x="24" y="56" width="592" height="356" rx="24" stroke="rgba(200,220,190,0.22)" stroke-dasharray="5 8"/>
+
+          <g>
+            <path d="M66 250c-16 0-29-13-29-29s13-29 29-29c3-25 24-44 49-44 23 0 42 14 49 34 15 2 26 15 26 30 0 17-14 31-31 31l-93 7z" fill="#1a2f23" stroke="#4d6753"/>
+            <text x="102" y="228" text-anchor="middle" fill="#dbe4d6" font-family="Inter, system-ui, sans-serif" font-size="11" letter-spacing="1.4">INTERNET</text>
+            <text x="102" y="245" text-anchor="middle" fill="#7f9278" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1">public</text>
+          </g>
+
+          <line x1="160" y1="221" x2="268" y2="221" stroke="#9fb693" stroke-dasharray="5 7"/>
+          <g transform="translate(214 221)">
+            <rect x="-11" y="-3" width="22" height="17" rx="3" fill="#12241a" stroke="#b8d3a4"/>
+            <path d="M-5.5-3v-5.5a5.5 5.5 0 0 1 11 0V-3" stroke="#b8d3a4"/>
+          </g>
+          <text x="214" y="200" text-anchor="middle" fill="#b8d3a4" font-family="Inter, system-ui, sans-serif" font-size="9" letter-spacing="1.6">VPN</text>
+
+          <rect x="282" y="98" width="212" height="272" rx="14" fill="#1a2f23" stroke="#4d6753"/>
+          <text x="300" y="124" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="9" letter-spacing="2">HOME SERVER</text>
+
+          <g font-family="Inter, system-ui, sans-serif">
+            <rect x="300" y="142" width="176" height="56" rx="7" fill="#203a2b" stroke="#3f5a48"/>
+            <circle cx="318" cy="170" r="4" fill="#a8cc90"/>
+            <text x="334" y="166" fill="#e4ebdf" font-size="12">Nextcloud</text>
+            <text x="334" y="182" fill="#8fa58c" font-size="8.5" letter-spacing="0.4">files · calendars · contacts</text>
+
+            <rect x="300" y="208" width="176" height="56" rx="7" fill="#203a2b" stroke="#3f5a48"/>
+            <circle cx="318" cy="236" r="4" fill="#a8cc90"/>
+            <text x="334" y="232" fill="#e4ebdf" font-size="12">Seafile</text>
+            <text x="334" y="248" fill="#8fa58c" font-size="8.5" letter-spacing="0.4">music library · rclone</text>
+
+            <rect x="300" y="274" width="176" height="56" rx="7" fill="#203a2b" stroke="#3f5a48"/>
+            <circle cx="318" cy="302" r="4" fill="#a8cc90"/>
+            <text x="334" y="298" fill="#e4ebdf" font-size="12">Immich</text>
+            <text x="334" y="314" fill="#8fa58c" font-size="8.5" letter-spacing="0.4">photo library</text>
+          </g>
+
+          <path d="M506 236h26" stroke="#9fb693" stroke-dasharray="4 5"/>
+          <g>
+            <rect x="540" y="170" width="58" height="132" rx="9" fill="#1a2f23" stroke="#4d6753"/>
+            <rect x="552" y="184" width="34" height="20" rx="3" fill="#203a2b" stroke="#3f5a48"/>
+            <rect x="552" y="212" width="34" height="20" rx="3" fill="#203a2b" stroke="#3f5a48"/>
+            <rect x="552" y="240" width="34" height="20" rx="3" fill="#203a2b" stroke="#3f5a48"/>
+            <circle cx="569" cy="280" r="4" fill="#a8cc90"/>
+            <text x="569" y="326" text-anchor="middle" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1.4">BACKUP</text>
+          </g>
+
+          <g font-family="Inter, system-ui, sans-serif" font-size="8.5" letter-spacing="1.4" fill="#9fb693">
+            <circle cx="34" cy="450" r="3" fill="#a8cc90"/>
+            <text x="46" y="453">TAILSCALE ONLY</text>
+            <circle cx="224" cy="450" r="3" fill="#a8cc90"/>
+            <text x="236" y="453">NO PUBLIC PORTS</text>
+            <circle cx="438" cy="450" r="3" fill="#a8cc90"/>
+            <text x="450" y="453">OFF-SITE + VERIFIED</text>
+          </g>
+        </svg>
+
+        <div class="diagram-mobile" role="img" aria-label="Diagram: the public internet is closed to inbound traffic. Access is through a Tailscale VPN to a LUKS-encrypted Linux server running Nextcloud, Seafile, and Immich in Docker. Nightly restic backups are mirrored off-site and verified weekly.">
+          <div class="diagram-step">
+            <span class="diagram-dot" aria-hidden="true"></span>
+            <div class="diagram-card">
+              <p class="diagram-kicker">Public internet</p>
+              <p class="diagram-title">No inbound ports</p>
+              <p class="diagram-sub">Everything stays private</p>
+            </div>
+          </div>
+
+          <div class="diagram-step">
+            <span class="diagram-dot" aria-hidden="true"></span>
+            <div class="diagram-card">
+              <p class="diagram-kicker">Access</p>
+              <p class="diagram-title">Tailscale VPN</p>
+              <p class="diagram-sub">Encrypted private tunnel</p>
+            </div>
+          </div>
+
+          <div class="diagram-step">
+            <span class="diagram-dot diagram-dot--active" aria-hidden="true"></span>
+            <div class="diagram-card">
+              <p class="diagram-kicker">Home server</p>
+              <p class="diagram-title">Linux &middot; Docker &middot; LUKS</p>
+              <ul class="diagram-services">
+                <li>Nextcloud</li>
+                <li>Seafile</li>
+                <li>Immich</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram-step">
+            <span class="diagram-dot" aria-hidden="true"></span>
+            <div class="diagram-card">
+              <p class="diagram-kicker">Backups</p>
+              <p class="diagram-title">restic &middot; nightly</p>
+              <p class="diagram-sub">Off-site mirror &middot; weekly verify</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container project-body">
+        <div class="prose">
+          <h2>The brief</h2>
+          <p>I wanted three things from a home server: my files and photos on hardware I control, no services exposed directly to the internet, and a recovery plan that survives a dead disk. Everything else was negotiable.</p>
+          <p>The constraint that shaped the build was not storage or CPU. It was <strong>maintenance</strong>. A lab that needs attention every week is a hobby; a lab that quietly runs for months is infrastructure. I optimized for the second one.</p>
+
+          <h2>The shape of it</h2>
+          <p>One Linux host runs the services in Docker. The system disk is LUKS-encrypted, and the live data sits on that encrypted volume. Nextcloud handles files, calendars, and contacts; Seafile holds the music library; Immich handles photos. Tailscale is the only way in.</p>
+          <p>Backups run nightly with restic to a separate 1.8 TB USB drive. A second timer mirrors that repository to another machine off-site, and a weekly job reads back a random 5% sample to verify it. Nothing is reachable by a public IP, and no service assumes it is safe just because it is behind the VPN.</p>
+
+          <div class="callout">
+            <p><strong>A note on detail:</strong> this write-up deliberately omits hostnames, addresses, ports, and credentials. The architecture and the trade-offs are the point.</p>
+          </div>
+
+          <h2>What runs</h2>
+          <ul>
+            <li><strong>Nextcloud</strong> &mdash; files, calendars, and contacts, synced to a phone and laptop over CalDAV and CardDAV.</li>
+            <li><strong>Seafile</strong> &mdash; the music library, exposed read-only to the sync pipeline through an rclone mount.</li>
+            <li><strong>Immich</strong> &mdash; the photo library and mobile backup target.</li>
+            <li><strong>Docker</strong> &mdash; every service runs in a container, which keeps upgrades and rollbacks predictable.</li>
+            <li><strong>Backups</strong> &mdash; nightly restic snapshots to a separate USB drive, an off-site mirror, and a weekly read-verification.</li>
+            <li><strong>Updates</strong> &mdash; nightly OS, firmware, and container updates from a systemd timer.</li>
+          </ul>
+
+          <h2>Three problems worth writing down</h2>
+
+          <h3>1. Syncing contacts without creating duplicates</h3>
+          <p>Google is still the source of truth for contacts, so I wrote a one-way sync from Google Contacts to Nextcloud&rsquo;s CardDAV. The important detail is that it matches existing cards by vCard <code>UID</code>, not by name or email. Updates land in place instead of creating a second &ldquo;Nick&rdquo; every day.</p>
+          <p>A small state file records which cards the script created. If a contact disappears from Google, it removes only the copy it made; it will not touch contacts that exist only in Nextcloud. The script supports a dry run, runs daily from a systemd user timer, and keeps OAuth credentials in a <code>0600</code> file outside the repository.</p>
+          <pre><code>./sync_contacts.py sync --dry-run   # inspect the changes
+./sync_contacts.py sync             # write them</code></pre>
+
+          <h3>2. Making an old MP3 player happy</h3>
+          <p>The player only understands FAT32, chokes on long or Unicode filenames, and sorts by filename. The pipeline reads a read-only rclone mount of the music library, transcodes FLAC to 320 kbps MP3, transliterates names to ASCII, strips FAT32-illegal characters, and writes both ID3v2.3 and ID3v1 tags for the old firmware.</p>
+          <p>Every output file is duration-checked against its source after writing. Re-running the sync skips existing files, so it doubles as an incremental update. A corrupt source track is logged and skipped instead of stalling the whole run. The card-format helper also refuses to proceed until you type <code>WIPE</code>, which is the only thing standing between a bad path and a very bad afternoon.</p>
+
+          <h3>3. Backups that get checked</h3>
+          <p>The schedule is the easy part. The useful part is proving the repository is readable and complete. A weekly timer runs restic&rsquo;s read-verification against a random 5% subset, both locally and on the off-site copy. That catches corruption and missing data without reading the entire repository every week.</p>
+          <p>What it does not prove is that a full restore works end to end. That is why an automated restore drill is on the improvement list &mdash; a backup I have not restored from is still just a hopeful copy.</p>
+
+          <h2>Security posture</h2>
+          <ul>
+            <li>Tailscale-only access. No public ports for admin or application interfaces.</li>
+            <li>Full-disk encryption with LUKS on the system drive.</li>
+            <li>App passwords instead of account passwords for sync clients.</li>
+            <li>Secrets in <code>0600</code> files outside the repo; config directories at <code>0700</code>.</li>
+            <li>One-way syncs where possible &mdash; nothing writes back to Google.</li>
+            <li>Nightly automatic OS, firmware, and container updates.</li>
+          </ul>
+
+          <h2>What I&rsquo;d do differently</h2>
+          <ul>
+            <li>Add monitoring and alerting earlier. For a while, the monitoring system was me noticing that something felt wrong.</li>
+            <li>Put the server on a UPS before the first power flicker, not after.</li>
+            <li>Move configuration into version-controlled infrastructure as code sooner.</li>
+            <li>Automate the restore drill, not just the backup.</li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <p>Keeping a server alive for a year teaches different lessons than building one. Most of the work is maintenance, documentation, and choosing the boring option. The interesting part is designing something that does not need me in the room.</p>
+          <p>That is the part I want to do professionally.</p>
+        </div>
+
+        <aside class="project-aside">
+          <p class="aside-label">At a glance</p>
+          <ul>
+            <li><strong>Hosts</strong>One Linux server</li>
+            <li><strong>Core services</strong>Nextcloud, Seafile, Immich</li>
+            <li><strong>Public ports</strong>None</li>
+            <li><strong>Remote access</strong>Tailscale VPN</li>
+            <li><strong>Backups</strong>Nightly restic, off-site mirror, weekly read-verify</li>
+            <li><strong>Disk encryption</strong>LUKS</li>
+            <li><strong>Automation</strong>Docker, systemd timers, Python, rclone</li>
+          </ul>
+        </aside>
+      </div>
+
+      <nav class="container next-project" aria-label="Next project">
+        <p>Next project</p>
+        <a href="altimeter-pi.html">
+          Altimeter Pi
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">NC</span>
+          <span>Nick Cook</span>
+        </a>
+        <p>IT &amp; systems administration &middot; Billings, Montana</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#capabilities">Capabilities</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="https://github.com/Nickc009">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicholascc/">LinkedIn</a>
+      </nav>
+
+      <p class="copyright">
+        <span>&copy; <span data-year>2026</span> Nick Cook. All rights reserved.</span>
+        <span>Built by hand. Hosted on GitHub Pages.</span>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

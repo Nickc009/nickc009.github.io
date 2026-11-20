@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The music pipeline — Nick Cook</title>
+  <meta name="description" content="A one-way Python pipeline that takes a self-hosted music library and prepares it for an old FAT32 MP3 player: transcode, sanitize, tag, and verify.">
+  <link rel="canonical" href="https://nickccook.com/work/music-pipeline.html">
+  <meta name="theme-color" content="#12241a">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nick Cook">
+  <meta property="og:title" content="The music pipeline — Nick Cook">
+  <meta property="og:description" content="Transcode, sanitize, tag, and verify: a one-way sync built around the limitations of an old MP3 player.">
+  <meta property="og:url" content="https://nickccook.com/work/music-pipeline.html">
+  <meta property="og:image" content="https://nickccook.com/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="manifest" href="../assets/images/site.webmanifest">
+
+  <script src="../assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header site-header--solid" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">NC</span>
+        <span>Nick Cook</span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#capabilities">Capabilities</a></li>
+          <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project">
+      <header class="project-hero">
+        <div class="container">
+          <a class="back-link" href="../index.html#work">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H4M7.5 3.5 3 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All work
+          </a>
+          <p class="section-kicker">Case study &middot; Automation</p>
+          <h1>The music pipeline</h1>
+          <p class="project-deck">A one-way sync that takes a self-hosted music library and prepares it for an old MP3 player &mdash; without me thinking about it.</p>
+
+          <dl class="project-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Owner &amp; operator</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>2025</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Python, rclone, ffmpeg, FAT32</dd>
+            </div>
+            <div>
+              <dt>Output</dt>
+              <dd>Incremental, verified MP3 library</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="container project-visual">
+        <svg viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a music library is transcoded from FLAC to 320 kbps MP3, then written to a FAT32 SD card with sanitized filenames and verified durations.">
+          <text x="44" y="46" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="9" letter-spacing="2.2">MUSIC PIPELINE</text>
+          <g fill="#8fa57e">
+            <rect x="54" y="198" width="6" height="40" rx="3" opacity="0.55"/>
+            <rect x="72" y="180" width="6" height="76" rx="3" opacity="0.75"/>
+            <rect x="90" y="160" width="6" height="116" rx="3"/>
+            <rect x="108" y="186" width="6" height="64" rx="3" opacity="0.7"/>
+            <rect x="126" y="150" width="6" height="136" rx="3"/>
+            <rect x="144" y="176" width="6" height="84" rx="3" opacity="0.8"/>
+            <rect x="162" y="138" width="6" height="160" rx="3"/>
+            <rect x="180" y="168" width="6" height="100" rx="3" opacity="0.75"/>
+            <rect x="198" y="154" width="6" height="128" rx="3"/>
+            <rect x="216" y="184" width="6" height="68" rx="3" opacity="0.65"/>
+            <rect x="234" y="164" width="6" height="108" rx="3"/>
+            <rect x="252" y="190" width="6" height="56" rx="3" opacity="0.6"/>
+          </g>
+          <path d="M312 218h44" stroke="#cf7a50" stroke-width="2" stroke-linecap="round"/>
+          <path d="m344 208 12 10-12 10" stroke="#cf7a50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="334" y="196" text-anchor="middle" fill="#cf7a50" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1.4">TRANSCODE</text>
+          <g>
+            <rect x="398" y="150" width="84" height="28" rx="4" fill="#203a2b" stroke="#4d6753"/>
+            <text x="440" y="169" text-anchor="middle" fill="#dbe4d6" font-family="Inter, system-ui, sans-serif" font-size="10" letter-spacing="1.2">FLAC</text>
+            <rect x="398" y="196" width="84" height="28" rx="4" fill="#203a2b" stroke="#4d6753"/>
+            <text x="440" y="215" text-anchor="middle" fill="#dbe4d6" font-family="Inter, system-ui, sans-serif" font-size="10" letter-spacing="1.2">MP3 320</text>
+          </g>
+          <g>
+            <rect x="510" y="140" width="52" height="92" rx="6" fill="#1a2f23" stroke="#4d6753"/>
+            <path d="M524 140v18h24v-18" stroke="#4d6753"/>
+            <rect x="536" y="152" width="9" height="8" rx="1.5" fill="#8fa57e"/>
+            <text x="536" y="264" text-anchor="middle" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1.4">FAT32</text>
+          </g>
+          <text x="44" y="320" fill="#7f9278" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1.2">READ-ONLY SOURCE · IDEMPOTENT RUNS · DURATION CHECKED</text>
+        </svg>
+      </div>
+
+      <div class="container project-body">
+        <div class="prose">
+          <h2>The problem</h2>
+          <p>The music library lives on a self-hosted Seafile instance. The player is an old Bluetooth MP3 player with opinions: it only understands FAT32, chokes on long or non-ASCII filenames, and sorts by filename rather than tags. Copying files by hand worked once, then became a small chore every time the library changed.</p>
+          <p>I wanted a repeatable one-way pipeline: source library in, player-ready SD card out, with no chance of writing back to the library.</p>
+
+          <h2>The pipeline</h2>
+          <ol>
+            <li><strong>Read-only source.</strong> The library is mounted through rclone in read-only mode. The sync can read music; it cannot modify or delete the source.</li>
+            <li><strong>Scan and compare.</strong> The script walks the library and compares each track against what is already on the card. Existing files are skipped, so a re-run is cheap.</li>
+            <li><strong>Transcode when needed.</strong> MP3 sources are copied bit-for-bit. FLAC sources are encoded to 320 kbps CBR MP3.</li>
+            <li><strong>Make the names boring.</strong> Artist, album, and track names are transliterated to ASCII and stripped of FAT32-illegal characters, then written in a predictable <code>Artist/Album/NN - Title.mp3</code> layout.</li>
+            <li><strong>Tag for old firmware.</strong> Every output gets both ID3v2.3 and ID3v1 tags, because the player&rsquo;s idea of &ldquo;modern&rdquo; stopped somewhere around 2004.</li>
+            <li><strong>Verify the result.</strong> Each written file&rsquo;s duration is checked against its source. A mismatch is reported instead of silently shipped.</li>
+          </ol>
+
+          <h2>Edge cases that mattered</h2>
+          <ul>
+            <li><strong>FAT32 limits.</strong> Long paths and characters that are legal on Linux are not legal on the card. Sanitizing names is not cosmetic; it prevents files that the player cannot open.</li>
+            <li><strong>A corrupt source file.</strong> One track in the library had no valid MPEG frames. The scanner logs it and skips it rather than failing the whole run.</li>
+            <li><strong>Old firmware.</strong> The player caps usable SD capacity. The pipeline handles the card it is given; the fallback is a smaller card, not a different format.</li>
+            <li><strong>Repeat runs.</strong> The sync is idempotent. Running it twice does not duplicate files or re-encode what is already correct.</li>
+          </ul>
+
+          <h2>Safety rails</h2>
+          <p>The card-format helper is intentionally annoying. It refuses to run against an ambiguous disk, and it will not proceed until you type <code>WIPE</code> at the prompt. The sync itself defaults to a dry run when I am testing a new source path, and the source mount is read-only by design.</p>
+          <p>Those rails are not distrust of the script. They are recognition that a tired person at 11 p.m. is part of the system too.</p>
+
+          <h2>What I&rsquo;d improve</h2>
+          <ul>
+            <li>Move the device-specific rules into a small profile file so a second player does not mean a second script.</li>
+            <li>Add a manifest so the card can be verified later without rescanning the source.</li>
+            <li>Schedule it from systemd when a card is inserted, instead of running it manually.</li>
+            <li>Surface a one-line summary at the end: copied, skipped, transcoded, failed.</li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <p>Most of the work in this project was not audio. It was understanding the actual device: its filesystem, its filename limits, its firmware, and the way it sorts a list. Designing for the real target &mdash; not the ideal one &mdash; is the same instinct that makes infrastructure reliable.</p>
+          <p>It also reinforced a rule I keep coming back to: verify the output. A file that exists is not the same as a file that plays.</p>
+        </div>
+
+        <aside class="project-aside">
+          <p class="aside-label">At a glance</p>
+          <ul>
+            <li><strong>Source</strong>Read-only rclone mount</li>
+            <li><strong>Formats</strong>FLAC &rarr; MP3 320 CBR; MP3 copied</li>
+            <li><strong>Filenames</strong>ASCII, FAT32-safe, sortable</li>
+            <li><strong>Tags</strong>ID3v2.3 + ID3v1</li>
+            <li><strong>Verification</strong>Duration checked per file</li>
+            <li><strong>Re-runs</strong>Incremental and idempotent</li>
+          </ul>
+        </aside>
+      </div>
+
+      <nav class="container next-project" aria-label="Next project">
+        <p>Next project</p>
+        <a href="homelab.html">
+          The home lab
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">NC</span>
+          <span>Nick Cook</span>
+        </a>
+        <p>IT &amp; systems administration &middot; Billings, Montana</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#capabilities">Capabilities</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="https://github.com/Nickc009">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicholascc/">LinkedIn</a>
+      </nav>
+
+      <p class="copyright">
+        <span>&copy; <span data-year>2026</span> Nick Cook. All rights reserved.</span>
+        <span>Built by hand. Hosted on GitHub Pages.</span>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

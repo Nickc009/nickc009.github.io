@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Altimeter Pi — Nick Cook</title>
+  <meta name="description" content="A Raspberry Pi and Sense HAT weather station that logs temperature, humidity, and altitude, then serves a live graph through a small Flask app.">
+  <link rel="canonical" href="https://nickccook.com/work/altimeter-pi.html">
+  <meta name="theme-color" content="#12241a">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nick Cook">
+  <meta property="og:title" content="Altimeter Pi — Nick Cook">
+  <meta property="og:description" content="A Raspberry Pi weather station with a live dashboard, built with Python, Flask, a Sense HAT, and Server-Sent Events.">
+  <meta property="og:url" content="https://nickccook.com/work/altimeter-pi.html">
+  <meta property="og:image" content="https://nickccook.com/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="icon" href="../assets/images/favicon.ico">
+  <link rel="manifest" href="../assets/images/site.webmanifest">
+
+  <script src="../assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header site-header--solid" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">NC</span>
+        <span>Nick Cook</span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#capabilities">Capabilities</a></li>
+          <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project">
+      <header class="project-hero">
+        <div class="container">
+          <a class="back-link" href="../index.html#work">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H4M7.5 3.5 3 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All work
+          </a>
+          <p class="section-kicker">Case study &middot; Hardware &amp; web</p>
+          <h1>Altimeter Pi</h1>
+          <p class="project-deck">A Raspberry Pi weather station that logs sensor data and serves a live, self-updating graph &mdash; built as a first taste of long-running services.</p>
+
+          <dl class="project-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Solo builder</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>2023</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Python, Flask, Sense HAT, Matplotlib, SSE, systemd</dd>
+            </div>
+            <div>
+              <dt>Hardware</dt>
+              <dd>Raspberry Pi + Sense HAT</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="container project-visual">
+        <svg viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A live line chart showing altitude rising from about 3,259 feet to 3,262 feet over two minutes.">
+          <g stroke="rgba(200,220,190,0.12)">
+            <path d="M0 80h640M0 160h640M0 240h640M0 320h640"/>
+            <path d="M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+          </g>
+          <path d="M64 300c52 0 58-18 104-22s58 14 96 8 36-44 78-52 44 12 78-10 36-64 78-78 56-8 78-26v140H64z" fill="url(#altfill)"/>
+          <path d="M64 300c52 0 58-18 104-22s58 14 96 8 36-44 78-52 44 12 78-10 36-64 78-78 56-8 78-26" stroke="#cf7a50" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="576" cy="120" r="5" fill="#cf7a50"/>
+          <circle cx="576" cy="120" r="12" stroke="#cf7a50" stroke-opacity="0.35"/>
+          <text x="44" y="46" fill="#8fa57e" font-family="Inter, system-ui, sans-serif" font-size="9" letter-spacing="2.2">LIVE SENSOR DATA</text>
+          <text x="596" y="70" text-anchor="end" fill="#e4ebdf" font-family="Fraunces, Georgia, serif" font-size="30">3,260 ft</text>
+          <text x="44" y="342" fill="#7f9278" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1">21:59</text>
+          <text x="596" y="342" text-anchor="end" fill="#7f9278" font-family="Inter, system-ui, sans-serif" font-size="8" letter-spacing="1">22:01</text>
+          <defs>
+            <linearGradient id="altfill" x1="320" y1="80" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#cf7a50" stop-opacity="0.18"/>
+              <stop offset="1" stop-color="#cf7a50" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="container project-body">
+        <div class="prose">
+          <h2>The idea</h2>
+          <p>The Sense HAT on a Raspberry Pi exposes temperature, humidity, and barometric pressure. I wanted a dashboard that updated without a manual refresh, and a log I could keep and inspect later.</p>
+          <p>It also had to survive unattended. The interesting challenge was not reading a sensor. It was building something that starts at boot, keeps running, and shuts down cleanly when asked.</p>
+
+          <h2>How it works</h2>
+          <ol>
+            <li>A background thread samples the sensor every five seconds and appends a row to a CSV log.</li>
+            <li>Matplotlib renders the latest data to a PNG using the non-interactive <code>Agg</code> backend, so the renderer works without a display.</li>
+            <li>A small Flask app serves the dashboard, the generated graph, and a Server-Sent Events endpoint for live sensor values.</li>
+            <li>A systemd unit starts the app at boot. Signal handlers catch <code>SIGINT</code>, <code>SIGTERM</code>, and <code>SIGTSTP</code> so the sensor and logging thread stop cleanly.</li>
+          </ol>
+
+          <h3>The altitude calculation</h3>
+          <p>Altitude comes from barometric pressure using the standard atmosphere approximation, then gets converted to feet. I applied fixed calibration offsets to temperature, humidity, and pressure after comparing the readings against local conditions.</p>
+          <pre><code>altitude = 44330.8 * (1 - (pressure / 1013.25) ** 0.1903)
+altitude_ft = altitude * 3.28084 + pressure_offset</code></pre>
+
+          <h2>Decisions worth explaining</h2>
+          <ul>
+            <li><strong>A thread, not a second process.</strong> The logging loop only sleeps and appends rows, so a thread keeps the Flask request path responsive without extra moving parts.</li>
+            <li><strong>CSV, not a database.</strong> The dataset was small and I wanted to be able to open the log in any spreadsheet. That trade-off would change if the project grew.</li>
+            <li><strong>Server-Sent Events.</strong> The data flows one way, from server to browser. SSE is a better fit than polling and simpler than a WebSocket for this.</li>
+            <li><strong>systemd for startup.</strong> The unit file is five lines, survives a reboot, and gives me logs through <code>journalctl</code>.</li>
+          </ul>
+
+          <h2>Watch it run</h2>
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/TfQv8MDi774?rel=0" title="Altimeter Pi demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+
+          <figure class="figure">
+            <img src="../assets/images/altimeter-graph.png" width="640" height="480" alt="Matplotlib output showing temperature and humidity over time, with altitude rising from roughly 3,259 to 3,262 feet." loading="lazy" decoding="async">
+            <figcaption>The graph generated by the running service: temperature and humidity on top, altitude below. The offsets are doing real work here.</figcaption>
+          </figure>
+
+          <h2>What I&rsquo;d improve</h2>
+          <ul>
+            <li>Move logging into its own worker or service so a web restart never interrupts data collection.</li>
+            <li>Replace the CSV with SQLite and add a proper retention policy.</li>
+            <li>Make the calibration offsets configurable instead of hard-coded.</li>
+            <li>Add tests around the altitude calculation and the cleanup path.</li>
+          </ul>
+
+          <h2>What I learned</h2>
+          <p>This was my first project that had to behave like a service rather than a script. Threading, graceful shutdown, boot persistence, and logs are not glamorous, but they are the difference between a demo and something that is still running a week later.</p>
+
+          <p>The code is on <a href="https://github.com/Nickc009/AltimeterPi">GitHub</a>.</p>
+        </div>
+
+        <aside class="project-aside">
+          <p class="aside-label">At a glance</p>
+          <ul>
+            <li><strong>Sensor</strong>Raspberry Pi Sense HAT</li>
+            <li><strong>Sampling</strong>Every 5 seconds</li>
+            <li><strong>Storage</strong>CSV log</li>
+            <li><strong>Live updates</strong>Server-Sent Events</li>
+            <li><strong>Startup</strong>systemd unit at boot</li>
+            <li><strong>Code</strong><a href="https://github.com/Nickc009/AltimeterPi">github.com/Nickc009/AltimeterPi</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <nav class="container next-project" aria-label="Next project">
+        <p>Next project</p>
+        <a href="music-pipeline.html">
+          The music pipeline
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">NC</span>
+          <span>Nick Cook</span>
+        </a>
+        <p>IT &amp; systems administration &middot; Billings, Montana</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#capabilities">Capabilities</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="https://github.com/Nickc009">GitHub</a>
+        <a href="https://www.linkedin.com/in/nicholascc/">LinkedIn</a>
+      </nav>
+
+      <p class="copyright">
+        <span>&copy; <span data-year>2026</span> Nick Cook. All rights reserved.</span>
+        <span>Built by hand. Hosted on GitHub Pages.</span>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
